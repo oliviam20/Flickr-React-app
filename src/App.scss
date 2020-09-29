@@ -9,16 +9,10 @@ body {
     margin: 0;
     margin-bottom: 0.5rem;
   }
-}
 
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  a {
+    color: #4ca9e6;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -38,8 +32,5 @@ body {
   color: white;
 }
 
-a {
-  color: #61dafb;
-}
 
 

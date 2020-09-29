@@ -1,12 +1,21 @@
 @import '../../variables.scss';
 
 .card-wrapper {
-  border: 1px solid $light-grey;
+  border: 1px solid $border-grey;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #FFFFFF;
   box-shadow: $box-shadow;
 
   .details-wrapper {
     padding: 1rem;
+
+    .date {
+      font-size: 0.75rem;
+      color: $light-grey;
+    }
+
+    a {
+      font-size: 0.75rem;
+    }
   }
 }
