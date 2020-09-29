@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import PropTypes from 'prop-types';
 // import axios from 'axios';
 import { store } from './store/store';
 import { fetchImages } from './actions/index';
