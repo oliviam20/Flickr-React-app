@@ -1,0 +1,37 @@
+@import '../../variables.scss';
+
+.search-wrapper {
+  // position: relative;
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+  display: block;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5); 
+
+  .search-bar {
+    border: 1px solid $light-grey;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    width: 100%;
+    background-color: white;
+    box-shadow: $box-shadow;
+
+    @media (min-width: $tablet) {
+      width: $tablet;
+    }
+  }
+
+  .search-button {
+    background-color: transparent;
+    border: 0;
+    position: relative;
+    right: 2.5rem;
+
+    i {
+      font-size: 1rem;
+      color: $grey;
+    }
+  }
+}
