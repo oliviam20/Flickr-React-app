@@ -13,8 +13,15 @@ const Card = ({
   tags,
   title,
   fullImage,
+  onHandleGetImages
 }) => {
-  const tagsArr = tags && tags.split(' ').map(tag => <Tag key={`${tag}${date}`} tag={tag} />);
+  const tagsArr = tags && tags.split(' ').map(tag => (
+    <Tag
+      key={`${tag}${date}`}
+      tag={tag}
+      onHandleGetImages={onHandleGetImages}
+    />
+  ));
   return (
     <figure className="card-wrapper">
       <ImageLink
@@ -48,7 +55,8 @@ Card.propTypes = {
   thumbnail: PropTypes.string,
   tags: PropTypes.string,
   title: PropTypes.string,
-  fullImage: PropTypes.string
+  fullImage: PropTypes.string,
+  onHandleGetImages: PropTypes.func.isRequired
 }
 
 export default Card;

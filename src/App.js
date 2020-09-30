@@ -20,13 +20,14 @@ const App = () => {
     setTag(e.currentTarget.value);
   }
 
-  const getImages = (e) => {
+  const getImages = (e, selectedTag = '') => {
     e.preventDefault();
+    if (selectedTag) setTag(selectedTag)
     loadImages()
       .then(res => {
         dispatch(res)
       });
-    fetchImages(tag)
+    fetchImages(selectedTag || tag)
       .then(res => {
         if (res.result.items.length) {
           dispatch(res)
@@ -40,10 +41,12 @@ const App = () => {
       <Search
         onHandleTagChange={handleTagChange}
         onHandleClick={getImages}
+        searchTerm={tag}
       />
       {state.loading && <Loader />}
       <CardList
         images={state.images}
+        handleGetImages={getImages}
       />
     </div>
   );

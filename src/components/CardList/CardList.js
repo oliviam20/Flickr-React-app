@@ -4,7 +4,10 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Card from '../Card/Card';
 import './CardList.scss';
 
-const CardList = ({ images }) => {
+const CardList = ({
+  handleGetImages,
+  images
+}) => {
   const cardsArr = images.map(img => (
     <Card
       key={`${img.date_taken}${img.title}`}
@@ -14,6 +17,7 @@ const CardList = ({ images }) => {
       tags={img.tags}
       title={img.title}
       fullImage={img.link}
+      onHandleGetImages={handleGetImages}
     />
   ));
   return (
@@ -34,6 +38,7 @@ CardList.defaultProps = {
 }
 
 CardList.propTypes = {
+  handleGetImages: PropTypes.func.isRequired,
   images: PropTypes.array
 }
 

@@ -4,7 +4,8 @@ import './Search.scss';
 
 const Search = ({
   onHandleTagChange,
-  onHandleClick
+  onHandleClick,
+  searchTerm
 }) => {
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) onHandleClick(e)
@@ -15,6 +16,7 @@ const Search = ({
       <input
         type="text"
         placeholder="Search..."
+        value={searchTerm}
         name="search"
         className="search-bar"
         onChange={onHandleTagChange}
