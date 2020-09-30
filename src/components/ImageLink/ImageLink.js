@@ -16,11 +16,13 @@ const ImageLink = ({
 );
 
 ImageLink.defaultProps = {
+  link: '',
   thumbnail: '',
   title: ''
 };
 
 ImageLink.propTypes = {
+  link: PropTypes.string,
   thumbnail: PropTypes.string,
   title: PropTypes.string
 };
