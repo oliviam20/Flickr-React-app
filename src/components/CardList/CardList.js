@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Card from '../Card/Card';
 import './CardList.scss';
 
@@ -15,17 +16,16 @@ const CardList = ({ images }) => {
       fullImage={img.link}
     />
   ));
-  if (!cardsArr.length) {
-    return (
-      <p>nothing here</p>
-    )
-  }
   return (
-    // <div className="cards-container">
     <div className="card-list-wrapper">
-      {cardsArr}
+      <ReactCSSTransitionGroup
+        transitionName="fade"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={200}
+      >
+        {cardsArr.length && cardsArr}
+      </ReactCSSTransitionGroup>
     </div>
-    // </div>
   )
 };
 

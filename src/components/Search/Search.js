@@ -26,7 +26,7 @@ const Search = ({
         className="search-button"
         onClick={onHandleClick}
       >
-        <i className="fa fa-search"></i>
+        <i className="fa fa-search" />
       </button>
     </div>
   )

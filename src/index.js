@@ -4,11 +4,9 @@ import App from './App';
 import { StateProvider } from './store/store';
 
 const app = (
-  <React.StrictMode>
-    <StateProvider>
-      <App />
-    </StateProvider>
-  </React.StrictMode>
+  <StateProvider>
+    <App />
+  </StateProvider>
 )
 
 ReactDOM.render(
