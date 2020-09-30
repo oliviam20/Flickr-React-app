@@ -29,4 +29,12 @@ const CardList = ({ images }) => {
   )
 };
 
+CardList.defaultProps = {
+  images: []
+}
+
+CardList.propTypes = {
+  images: PropTypes.array
+}
+
 export default CardList;
