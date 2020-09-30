@@ -1,0 +1,32 @@
+a {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  clear: float;
+  width: 100%;
+  height: 99%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .overlay-text {
+      opacity: 1;
+    }
+  }
+
+  .overlay-text {
+    opacity: 0;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 900;
+    transition: 0.3s;
+  }
+}

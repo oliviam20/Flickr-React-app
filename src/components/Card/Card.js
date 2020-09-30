@@ -18,6 +18,7 @@ const Card = ({
   return (
     <figure className="card-wrapper">
       <Image
+        link={fullImage}
         thumbnail={thumbnail}
         title={title}
       />
