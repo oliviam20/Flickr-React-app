@@ -21,16 +21,14 @@ const Card = ({
         thumbnail={thumbnail}
         title={title}
       />
-      <div className="details-wrapper">
-        <figcaption>
-          {author && <FormattedText text={author} />}
-          {date && <FormattedDate date={date} />}
-          <a href={fullImage} rel="noopener noreferrer" target="_blank">Link to full image</a>
-        </figcaption>
-        {tags && <ul>
-          {tagsArr}
-        </ul>}
-      </div>
+      <figcaption>
+        {author && <FormattedText text={author} />}
+        {date && <FormattedDate date={date} />}
+        <a href={fullImage} rel="noopener noreferrer" target="_blank">Link to full image</a>
+      </figcaption>
+      {tags && <ul>
+        {tagsArr}
+      </ul>}
     </figure>
   )
 }
