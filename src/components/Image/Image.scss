@@ -2,7 +2,17 @@ a {
   position: relative;
 }
 
+@mixin border-top-corners-radius {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.image {
+  @include border-top-corners-radius;
+}
+
 .overlay {
+  @include border-top-corners-radius;
   position: absolute;
   top: 0;
   left: 0;

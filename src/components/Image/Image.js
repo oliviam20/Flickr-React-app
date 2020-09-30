@@ -8,7 +8,7 @@ const Image = ({
   title
 }) => (
   <a href={link} rel="noopener noreferrer" target="_blank">
-    <img src={thumbnail} alt={title} />
+    <img className="image" src={thumbnail} alt={title} />
     <div className="overlay">
       <p className="overlay-text">Open</p>
     </div>
