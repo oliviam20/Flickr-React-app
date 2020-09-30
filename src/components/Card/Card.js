@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FormattedDate from '../FormattedDate/FormattedDate';
 import FormattedText from '../FormattedText/FormattedText';
-import Image from '../Image/Image';
+import ImageLink from '../ImageLink/ImageLink';
 import Tag from '../Tag/Tag';
 import './Card.scss';
 
@@ -17,7 +17,7 @@ const Card = ({
   const tagsArr = tags && tags.split(' ').map(tag => <Tag key={`${tag}${date}`} tag={tag} />);
   return (
     <figure className="card-wrapper">
-      <Image
+      <ImageLink
         link={fullImage}
         thumbnail={thumbnail}
         title={title}

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Image.scss';
+import './ImageLink.scss';
 
-const Image = ({
+const ImageLink = ({
   link,
   thumbnail,
   title
@@ -15,14 +15,14 @@ const Image = ({
   </a>
 );
 
-Image.defaultProps = {
+ImageLink.defaultProps = {
   thumbnail: '',
   title: ''
 };
 
-Image.propTypes = {
+ImageLink.propTypes = {
   thumbnail: PropTypes.string,
   title: PropTypes.string
 };
 
-export default Image;
+export default ImageLink;

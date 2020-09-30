@@ -15,9 +15,6 @@ const CardList = ({ images }) => {
       fullImage={img.link}
     />
   ));
-  console.log('cardlist', images)
-  // console.log('cardsArrr', cardsArr);
-  
   if (!cardsArr.length) {
     return (
       <p>nothing here</p>
