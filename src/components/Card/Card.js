@@ -25,7 +25,6 @@ const Card = ({
       <figcaption>
         {author && <FormattedText text={author} />}
         {date && <FormattedDate date={date} />}
-        <a href={fullImage} rel="noopener noreferrer" target="_blank">Link to full image</a>
       </figcaption>
       {tags && <ul>
         {tagsArr}
