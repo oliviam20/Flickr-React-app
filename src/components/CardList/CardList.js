@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
+import './CardList.scss';
 
 const CardList = ({ images }) => {
   const cardsArr = images.map((img, idx) => (
@@ -15,7 +16,7 @@ const CardList = ({ images }) => {
     />
   ));
   console.log('cardlist', images)
-  console.log('cardsArrr', cardsArr);
+  // console.log('cardsArrr', cardsArr);
   
   if (!cardsArr.length) {
     return (
@@ -23,9 +24,9 @@ const CardList = ({ images }) => {
     )
   }
   return (
-    <>
+    <div className="card-list-wrapper">
       {cardsArr}
-    </>
+    </div>
   )
 };
 
