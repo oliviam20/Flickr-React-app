@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
 import { store } from './store/store';
 import { fetchImages, loadImages } from './actions/index';
 import CardList from './components/CardList/CardList';
@@ -8,7 +7,7 @@ import './App.scss';
 
 import Search from './components/Search/Search';
 
-function App() {
+const App = () => {
   const globalState = useContext(store);
   const {
     dispatch,
