@@ -1,9 +1,9 @@
 @import '../../variables.scss';
 
 .search-wrapper {
-  // position: relative;
   text-align: center;
   position: sticky;
+  z-index: 9999;
   top: 0;
   padding: 2rem;
   display: block;
