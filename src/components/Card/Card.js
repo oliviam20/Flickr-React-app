@@ -25,10 +25,10 @@ const Card = ({
       <figcaption>
         {author && <FormattedText text={author} />}
         {date && <FormattedDate date={date} />}
+        {tags && <ul>
+          {tagsArr}
+        </ul>}
       </figcaption>
-      {tags && <ul>
-        {tagsArr}
-      </ul>}
     </figure>
   )
 }

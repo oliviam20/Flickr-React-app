@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Card from '../Card/Card';
 import './CardList.scss';
 
 const CardList = ({ images }) => {
-  const cardsArr = images.map((img, idx) => (
+  const cardsArr = images.map(img => (
     <Card
       key={`${img.date_taken}${img.title}`}
       author={img.author}
