@@ -45,6 +45,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Flickr</h1>
       <Search
         onHandleTagChange={handleTagChange}
         onHandleClick={getImages}
