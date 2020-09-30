@@ -24,9 +24,11 @@ const CardList = ({ images }) => {
     )
   }
   return (
+    // <div className="cards-container">
     <div className="card-list-wrapper">
       {cardsArr}
     </div>
+    // </div>
   )
 };
 

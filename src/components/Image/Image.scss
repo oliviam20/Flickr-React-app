@@ -10,6 +10,8 @@ a {
 
 .image {
   @include border-top-corners-radius;
+  width: 100%;
+  display: block;
 }
 
 .overlay {
@@ -18,13 +20,13 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  height: 99%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s;
 
-  &:hover {
+  &::hover {
     background-color: rgba(0, 0, 0, 0.5);
 
     .overlay-text {
