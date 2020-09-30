@@ -10,7 +10,7 @@ const Image = ({
   <a href={link} rel="noopener noreferrer" target="_blank">
     <img className="image" src={thumbnail} alt={title} />
     <div className="overlay">
-      <p className="overlay-text">Open</p>
+      <span className="overlay-text">Open</span>
     </div>
   </a>
 );

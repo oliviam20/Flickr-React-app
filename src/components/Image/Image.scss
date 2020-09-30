@@ -30,13 +30,12 @@ a {
     background-color: rgba(0, 0, 0, 0.5);
 
     .overlay-text {
-      opacity: 1;
+      color: #fff;
     }
   }
 
   .overlay-text {
-    opacity: 0;
-    color: #ffffff;
+    color: transparent;
     font-size: 2rem;
     font-weight: 900;
     transition: 0.3s;
