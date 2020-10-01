@@ -21,18 +21,23 @@ const App = () => {
   }
 
   const getImages = (e, selectedTag = '') => {
-    if (selectedTag) setQuery(selectedTag)
-    console.log('state tag', query);
-    loadImages()
-      .then(res => {
-        dispatch(res)
-      });
-    fetchImages(selectedTag || query)
-      .then(res => {
-        if (res.result.items.length) {
+    if (selectedTag) setQuery(selectedTag);
+
+    const searchTerm = selectedTag || query;
+
+    if (searchTerm) {
+      loadImages()
+        .then(res => {
           dispatch(res)
-        }
-      })
+        });
+
+      fetchImages(searchTerm)
+        .then(res => {
+          if (res.result.items.length) {
+            dispatch(res)
+          }
+        })
+    }
   }
 
   return (

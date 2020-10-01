@@ -7,8 +7,8 @@ const Tag = ({
   tag,
   onHandleSearch
 }) => {
-  const handleGetImages = () => {
-    onHandleSearch(tag)
+  const handleGetImages = (e) => {
+    onHandleSearch(e, tag)
   }
   return (
     <li>
