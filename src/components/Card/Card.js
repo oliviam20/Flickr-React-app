@@ -13,13 +13,13 @@ const Card = ({
   tags,
   title,
   fullImage,
-  onHandleGetImages
+  onHandleSearch
 }) => {
   const tagsArr = tags && tags.split(' ').map(tag => (
     <Tag
       key={`${tag}${date}`}
       tag={tag}
-      onHandleGetImages={onHandleGetImages}
+      onHandleSearch={onHandleSearch}
     />
   ));
   return (
@@ -56,7 +56,7 @@ Card.propTypes = {
   tags: PropTypes.string,
   title: PropTypes.string,
   fullImage: PropTypes.string,
-  onHandleGetImages: PropTypes.func.isRequired
+  onHandleSearch: PropTypes.func.isRequired
 }
 
 export default Card;

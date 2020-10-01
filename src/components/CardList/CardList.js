@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 import './CardList.scss';
 
 const CardList = ({
-  handleGetImages,
+  onHandleSearch,
   images
 }) => {
   const cardsArr = images.map(img => (
@@ -17,7 +17,7 @@ const CardList = ({
       tags={img.tags}
       title={img.title}
       fullImage={img.link}
-      onHandleGetImages={handleGetImages}
+      onHandleSearch={onHandleSearch}
     />
   ));
   return (
@@ -38,7 +38,7 @@ CardList.defaultProps = {
 }
 
 CardList.propTypes = {
-  handleGetImages: PropTypes.func.isRequired,
+  onHandleSearch: PropTypes.func.isRequired,
   images: PropTypes.array
 }
 

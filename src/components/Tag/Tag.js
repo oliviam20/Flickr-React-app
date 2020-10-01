@@ -5,14 +5,19 @@ import './Tag.scss';
 
 const Tag = ({
   tag,
-  onHandleGetImages
-}) => (
-  <li>
-    <button onClick={(e) => onHandleGetImages(e, tag)}>
-      {tag}
-    </button>
-  </li>
-);
+  onHandleSearch
+}) => {
+  const handleGetImages = () => {
+    onHandleSearch(tag)
+  }
+  return (
+    <li>
+      <button onClick={handleGetImages}>
+        {tag}
+      </button>
+    </li>
+  );
+};
 
 Tag.defaultProps = {
   tag: ''
@@ -20,7 +25,7 @@ Tag.defaultProps = {
 
 Tag.propTypes = {
   tag: PropTypes.string,
-  onHandleGetImages: PropTypes.func.isRequired
+  onHandleSearch: PropTypes.func.isRequired
 };
 
 export default Tag;

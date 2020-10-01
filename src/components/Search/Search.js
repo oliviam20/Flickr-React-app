@@ -1,32 +1,50 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import debounce from 'lodash/debounce';
 import './Search.scss';
 
 const Search = ({
   onHandleTagChange,
-  onHandleClick,
-  searchTerm
+  onHandleSearch,
+  query
 }) => {
   const handleKeyPress = (e) => {
-    if (e.keyCode === 13) onHandleClick(e)
+    if (e.keyCode === 13) onHandleSearch()
   }
+
+  // const delayedQuery = useCallback(debounce(() => onHandleSearch(), 500), [])
+
+  // Update the function only when query updates
+  const delayedQuery = useCallback(debounce(onHandleSearch, 500), [query]);
+
+  const handleChange = (e) => {
+    onHandleTagChange(e)
+    // delayedQuery()
+  }
+
+  useEffect(() => {
+    delayedQuery();
+
+    // cancel the debounce on useEffect cleanup
+    return delayedQuery.cancel;
+  }, [query, delayedQuery])
 
   return (
     <div className="search-wrapper">
       <input
         type="text"
         placeholder="Search..."
-        value={searchTerm}
+        value={query}
         name="search"
         className="search-bar"
-        onChange={onHandleTagChange}
+        onChange={handleChange}
         onKeyDown={handleKeyPress}
       />
       <button
         type="submit"
         name="search"
         className="search-button"
-        onClick={onHandleClick}
+        onClick={onHandleSearch}
       >
         <i className="fa fa-search" />
       </button>
@@ -34,9 +52,14 @@ const Search = ({
   )
 };
 
+Search.defaultProps = {
+  query: ''
+};
+
 Search.propTypes = {
   onHandleTagChange: PropTypes.func.isRequired,
-  onHandleClick: PropTypes.func.isRequired
+  onHandleSearch: PropTypes.func.isRequired,
+  query: PropTypes.string
 };
 
 export default Search;

@@ -14,20 +14,20 @@ const App = () => {
     state
   } = globalState;
 
-  const [tag, setTag] = useState('');
+  const [query, setQuery] = useState('');
 
   const handleTagChange = (e) => {
-    setTag(e.currentTarget.value);
+    setQuery(e.currentTarget.value);
   }
 
   const getImages = (e, selectedTag = '') => {
-    e.preventDefault();
-    if (selectedTag) setTag(selectedTag)
+    if (selectedTag) setQuery(selectedTag)
+    console.log('state tag', query);
     loadImages()
       .then(res => {
         dispatch(res)
       });
-    fetchImages(selectedTag || tag)
+    fetchImages(selectedTag || query)
       .then(res => {
         if (res.result.items.length) {
           dispatch(res)
@@ -40,13 +40,13 @@ const App = () => {
       <h1>Flickr</h1>
       <Search
         onHandleTagChange={handleTagChange}
-        onHandleClick={getImages}
-        searchTerm={tag}
+        onHandleSearch={getImages}
+        query={query}
       />
       {state.loading && <Loader />}
       <CardList
         images={state.images}
-        handleGetImages={getImages}
+        onHandleSearch={getImages}
       />
     </div>
   );
