@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { store } from '../../store/store';
-import { loadImages, clearImages } from '../../actions/index';
+import { clearImages } from '../../actions/index';
 import debounce from 'lodash/debounce';
 import Button from '../Button/Button';
 import InputText from '../InputText/InputText';
@@ -16,8 +16,6 @@ const Search = ({
     if (e.keyCode === 13) onHandleSearch();
   };
 
-  // const delayedQuery = useCallback(debounce(() => onHandleSearch(), 500), [])
-
   const globalState = useContext(store);
   const { dispatch } = globalState;
 
@@ -25,16 +23,11 @@ const Search = ({
   const delayedQuery = useCallback(debounce(onHandleSearch, 500), [query]);
 
   const handleChange = (e) => {
-    loadImages()
-      .then(res => {
-        dispatch(res);
-      });
     onHandleTagChange(e);
     if (!e.currentTarget.value) {
       clearImages()
         .then(res => dispatch(res));
     };
-    // delayedQuery()
   };
 
   useEffect(() => {
