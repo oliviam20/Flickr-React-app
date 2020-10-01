@@ -46,6 +46,7 @@ const App = () => {
       <Search
         onHandleTagChange={handleTagChange}
         onHandleSearch={getImages}
+        loadImages={loadImages}
         query={query}
       />
       {state.loading && <Loader />}

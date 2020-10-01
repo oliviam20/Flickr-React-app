@@ -1,5 +1,7 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
+import { store } from '../../store/store';
+import { loadImages } from '../../actions/index';
 import debounce from 'lodash/debounce';
 import './Search.scss';
 
@@ -14,10 +16,20 @@ const Search = ({
 
   // const delayedQuery = useCallback(debounce(() => onHandleSearch(), 500), [])
 
+  const globalState = useContext(store);
+  const {
+    dispatch,
+    state
+  } = globalState;
+
   // Update the function only when query updates
   const delayedQuery = useCallback(debounce(onHandleSearch, 500), [query]);
 
   const handleChange = (e) => {
+    loadImages()
+      .then(res => {
+        dispatch(res)
+      });
     onHandleTagChange(e)
     // delayedQuery()
   }
