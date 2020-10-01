@@ -2,13 +2,14 @@
 
 .card-list-wrapper {
   padding: 1rem;
-  margin: 1.5rem auto;
+  margin: 1rem auto;
   max-width: 768px;
   column-gap: 1.5rem;
   column-count: 1;
 
   @media (min-width: $mobile) {
     column-count: 2;
+    margin: 1rem;
   }
 
   @media (min-width: $tablet) {
