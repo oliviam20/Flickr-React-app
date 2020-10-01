@@ -8,24 +8,28 @@ const CardList = ({
   onHandleSearch,
   images
 }) => {
-  const cardsArr = images.map(img => (
-    <Card
+  const cardsArr = images.map((img, index) => (
+    <div
       key={`${img.date_taken}${img.title}`}
-      author={img.author}
-      date={img.date_taken}
-      thumbnail={img.media.m}
-      tags={img.tags}
-      title={img.title}
-      fullImage={img.link}
-      onHandleSearch={onHandleSearch}
-    />
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      <Card
+        author={img.author}
+        date={img.date_taken}
+        thumbnail={img.media.m}
+        tags={img.tags}
+        title={img.title}
+        fullImage={img.link}
+        onHandleSearch={onHandleSearch}
+      />
+    </div>
   ));
   return (
     <div className="card-list-wrapper">
       <ReactCSSTransitionGroup
         transitionName="fade"
         transitionEnterTimeout={500}
-        transitionLeaveTimeout={200}
+        transitionLeaveTimeout={1}
       >
         {cardsArr.length && cardsArr}
       </ReactCSSTransitionGroup>
