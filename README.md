@@ -6,9 +6,10 @@ http://api.flickr.com/services/feeds/photos_public.gne
 ```
 
 [Live Demo 1 - Heroku](https://om-flickr-react-app.herokuapp.com/)
-*note to myself* deployed using cb86 account for heroku
 
 [Live Demo 2 - Netlify](https://flickr-react-app.netlify.app/)
+
+*note to myself* - deployed using cb86 account for heroku
 
 ## Deployment
 
