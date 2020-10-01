@@ -18,30 +18,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #282c34;
 
-  h1 {
-    color: #fff;
-    margin: 2rem 0 0;
-  }
-
   p {
-    color: #222;
+    color: $primary-text;
     margin: 0;
     margin-bottom: 0.5rem;
   }
 
   a {
-    color: #4ca9e6;
+    color: $blue;
   }
 
   .App {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    h1 {
-      @media (max-width: $mobile) {
-        font-size: 1.5rem;
-      }
-    }
   }
 }

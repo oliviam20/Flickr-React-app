@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { store } from './store/store';
 import { fetchImages, loadImages } from './actions/index';
 import CardList from './components/CardList/CardList';
+import Heading from './components/Heading/Heading';
 import Loader from './components/Loader/Loader';
 import './App.scss';
 
@@ -42,7 +43,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Flickr</h1>
+      <div className="background" />
+      <Heading text="flickr" />
       <Search
         onHandleTagChange={handleTagChange}
         onHandleSearch={getImages}
