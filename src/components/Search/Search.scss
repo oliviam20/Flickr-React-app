@@ -11,20 +11,6 @@
   background-color: rgba(40, 44, 52, 0.5); 
   width: 100%;
 
-  .search-bar {
-    border: 1px solid $border-grey;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    width: 100%;
-    background-color: white;
-    box-shadow: $box-shadow;
-
-    @media (min-width: $desktop) {
-      width: $tablet;
-    }
-  }
-
   .search-button {
     background-color: transparent;
     border: 0;

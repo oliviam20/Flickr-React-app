@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { store } from '../../store/store';
 import { loadImages, clearImages } from '../../actions/index';
 import debounce from 'lodash/debounce';
+import InputText from '../InputText/InputText';
 import './Search.scss';
 
 const Search = ({
@@ -17,10 +18,7 @@ const Search = ({
   // const delayedQuery = useCallback(debounce(() => onHandleSearch(), 500), [])
 
   const globalState = useContext(store);
-  const {
-    dispatch,
-    state
-  } = globalState;
+  const { dispatch } = globalState;
 
   // Update the function only when query updates
   const delayedQuery = useCallback(debounce(onHandleSearch, 500), [query]);
@@ -47,14 +45,10 @@ const Search = ({
 
   return (
     <div className="search-wrapper">
-      <input
-        type="text"
-        placeholder="Search..."
-        value={query}
-        name="search"
-        className="search-bar"
-        onChange={handleChange}
-        onKeyDown={handleKeyPress}
+      <InputText
+        query={query}
+        onHandleChange={handleChange}
+        onHandleKeyPress={handleKeyPress}
       />
       <button
         type="submit"
