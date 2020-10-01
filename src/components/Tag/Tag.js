@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Button from '../Button/Button';
 import './Tag.scss';
 
 const Tag = ({
@@ -12,9 +12,12 @@ const Tag = ({
   }
   return (
     <li>
-      <button onClick={handleGetImages}>
+      <Button
+        className="tag-button"
+        onClick={handleGetImages}
+      >
         {tag}
-      </button>
+      </Button>
     </li>
   );
 };

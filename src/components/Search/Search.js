@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { store } from '../../store/store';
 import { loadImages, clearImages } from '../../actions/index';
 import debounce from 'lodash/debounce';
+import Button from '../Button/Button';
 import InputText from '../InputText/InputText';
 import './Search.scss';
 
@@ -50,14 +51,12 @@ const Search = ({
         onHandleChange={handleChange}
         onHandleKeyPress={handleKeyPress}
       />
-      <button
-        type="submit"
-        name="search"
+      <Button
         className="search-button"
         onClick={onHandleSearch}
       >
         <i className="fa fa-search" />
-      </button>
+      </Button>
     </div>
   )
 };

@@ -17,7 +17,7 @@ const Card = ({
 }) => {
   const tagsArr = tags && tags.split(' ').map(tag => (
     <Tag
-      key={`${tag}${date}`}
+      key={`${tag}-${date}`}
       tag={tag}
       onHandleSearch={onHandleSearch}
     />
