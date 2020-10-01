@@ -19,7 +19,10 @@
 
   @media (min-width: $desktop) {
     column-count: 4;
-    max-width: $desktop-xl;
+  }
+
+  @media (min-width: $desktop) {
+    width: $desktop-xl;
   }
 }
 
