@@ -1,6 +1,16 @@
 a {
   position: relative;
   display: block;
+
+  &:focus {
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .overlay-text {
+      color: #fff;
+    }
+  }
 }
 
 @mixin border-top-corners-radius {
