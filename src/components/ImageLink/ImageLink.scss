@@ -13,19 +13,19 @@ a {
   }
 }
 
-@mixin border-top-corners-radius {
+@mixin border-radius-top-corners {
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
 
 .image {
-  @include border-top-corners-radius;
+  @include border-radius-top-corners;
   width: 100%;
   display: block;
 }
 
 .overlay {
-  @include border-top-corners-radius;
+  @include border-radius-top-corners;
   position: absolute;
   top: 0;
   left: 0;
