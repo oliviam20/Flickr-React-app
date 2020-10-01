@@ -1,6 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { store } from './store/store';
 import { fetchImages, loadImages } from './actions/index';
+import { formatTags } from './helpers/index';
 import CardList from './components/CardList/CardList';
 import Heading from './components/Heading/Heading';
 import Loader from './components/Loader/Loader';
@@ -32,7 +33,8 @@ const App = () => {
           dispatch(res)
         });
 
-      fetchImages(searchTerm)
+      const formattedTags = formatTags(searchTerm);
+      fetchImages(formattedTags)
         .then(res => {
           if (res.result.items.length) {
             dispatch(res)

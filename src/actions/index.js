@@ -19,10 +19,7 @@ export const loadImages = async () => {
 };
 
 export const fetchImages = (tag) => {
-  const tags = tag.split(' ');
-  const formattedTags = tags.map(tag => tag.replace(/[^0-9a-z]/gi, '')).filter(tag => tag !== '').join(',');
-  const url = API_URL + `${formattedTags}`;
-  return axios.get(url)
+  return axios.get(`${API_URL}${tag}`)
     .then(res => ({
       type: LOAD_IMAGES_SUCESS,
       result: res.data
