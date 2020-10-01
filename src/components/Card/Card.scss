@@ -17,14 +17,37 @@
   figcaption {
     padding: 1rem;
 
-    .date {
-      margin: 0;
-    }
-  }
+    .toggle-tags-wrapper {
+      @media (min-width: $mobile) {
+        display: none;
+      }
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+      .toggle-tags-button {
+        border: 1px solid $blue;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        transition: 0.3s;
+      }
+    }
+
+    .tag-list {
+      height: 0;
+      overflow: hidden;
+
+      @media (min-width: $mobile) {
+        height: auto;
+        overflow: visible;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        display: inline-block;
+      }
+    }
   }
 }

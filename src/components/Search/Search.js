@@ -13,8 +13,8 @@ const Search = ({
   query
 }) => {
   const handleKeyPress = (e) => {
-    if (e.keyCode === 13) onHandleSearch()
-  }
+    if (e.keyCode === 13) onHandleSearch();
+  };
 
   // const delayedQuery = useCallback(debounce(() => onHandleSearch(), 500), [])
 
@@ -27,15 +27,15 @@ const Search = ({
   const handleChange = (e) => {
     loadImages()
       .then(res => {
-        dispatch(res)
+        dispatch(res);
       });
     onHandleTagChange(e);
     if (!e.currentTarget.value) {
       clearImages()
-        .then(res => dispatch(res))
-    }
+        .then(res => dispatch(res));
+    };
     // delayedQuery()
-  }
+  };
 
   useEffect(() => {
     delayedQuery();

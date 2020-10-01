@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Button from '../Button/Button';
 import FormattedDate from '../FormattedDate/FormattedDate';
 import FormattedText from '../FormattedText/FormattedText';
 import ImageLink from '../ImageLink/ImageLink';
@@ -16,12 +17,25 @@ const Card = ({
   onHandleSearch
 }) => {
   const tagsArr = tags && tags.split(' ').map(tag => (
-    <Tag
-      key={`${tag}-${date}`}
-      tag={tag}
-      onHandleSearch={onHandleSearch}
-    />
+    <li key={`${tag}-${date}`}>
+      <Tag
+        tag={tag}
+        onHandleSearch={onHandleSearch}
+      />
+    </li>
   ));
+
+  const [isTag, setIsTag] = useState(false);
+
+  const toggleTagStyle = {
+    backgroundColor: isTag ? '#4ca9e6' : 'transparent',
+    color: isTag ? '#fff' : '#4ca9e6'
+  };
+
+  const toggleTags = () => {
+    setIsTag(!isTag);
+  };
+
   return (
     <figure className="card-wrapper">
       <ImageLink
@@ -32,7 +46,15 @@ const Card = ({
       <figcaption>
         {author && <FormattedText text={author} />}
         {date && <FormattedDate date={date} />}
-        {tags && <ul>
+        <div className="toggle-tags-wrapper">
+          <Button
+            className="toggle-tags-button"
+            onClick={toggleTags}
+            style={toggleTagStyle}
+            text="Toggle Tags"
+          />
+        </div>
+        {tags && <ul className={isTag ? "" : "tag-list"}>
           {tagsArr}
         </ul>}
       </figcaption>

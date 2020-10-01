@@ -11,14 +11,14 @@ const Tag = ({
     onHandleSearch(e, tag)
   }
   return (
-    <li>
+    <>
       <Button
         className="tag-button"
         onClick={handleGetImages}
       >
         {tag}
       </Button>
-    </li>
+    </>
   );
 };
 
