@@ -8,7 +8,12 @@ const ImageLink = ({
   title
 }) => (
   <a href={link} rel="noopener noreferrer" target="_blank">
-    <img className="image" src={thumbnail} alt={title} />
+    <img
+      alt={title}
+      className="image"
+      loading="lazy"
+      src={thumbnail}
+    />
     <div className="overlay">
       <span className="overlay-text">Open</span>
     </div>
