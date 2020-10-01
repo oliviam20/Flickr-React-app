@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { store } from '../../store/store';
-import { loadImages } from '../../actions/index';
+import { loadImages, clearImages } from '../../actions/index';
 import debounce from 'lodash/debounce';
 import './Search.scss';
 
@@ -30,7 +30,11 @@ const Search = ({
       .then(res => {
         dispatch(res)
       });
-    onHandleTagChange(e)
+    onHandleTagChange(e);
+    if (!e.currentTarget.value) {
+      clearImages()
+        .then(res => dispatch(res))
+    }
     // delayedQuery()
   }
 

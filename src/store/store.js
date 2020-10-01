@@ -10,6 +10,11 @@ const { Provider } = store;
 const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer((state, action) => {
     switch(action.type) {
+      case 'CLEAR_IMAGES':
+        return {
+          images: [],
+          loading: false
+        }
       case 'LOAD_IMAGES':
         return {
           images: [],
