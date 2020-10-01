@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { store } from './store/store';
-import { fetchImages, loadImages } from './actions/index';
-import { formatTags } from './helpers/index';
-import CardList from './components/CardList/CardList';
-import Heading from './components/Heading/Heading';
-import Loader from './components/Loader/Loader';
+import { store } from '../store/store';
+import { fetchImages, loadImages } from '../actions/index';
+import { formatTags } from '../helpers/index';
+import CardList from '../components/CardList/CardList';
+import Heading from '../components/Heading/Heading';
+import Loader from '../components/Loader/Loader';
 import './App.scss';
 
-import Search from './components/Search/Search';
+import Search from '../components/Search/Search';
 
 const App = () => {
   const globalState = useContext(store);
