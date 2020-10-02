@@ -3,7 +3,7 @@ import { store } from '../store/store';
 import { fetchImages, loadImages } from '../actions/index';
 import { formatTags } from '../helpers/index';
 import CardList from '../components/CardList/CardList';
-import Error from '../components/Error/Error';
+import ErrorMessage from '../components/ErrorMessage/ErrorMessage';
 import Heading from '../components/Heading/Heading';
 import Loader from '../components/Loader/Loader';
 import './App.scss';
@@ -52,7 +52,7 @@ const App = () => {
         loadImages={loadImages}
         query={query}
       />
-      {!state.loading && state.error && <Error />}
+      {!state.loading && state.error && <ErrorMessage />}
       {state.loading && <Loader />}
       <CardList
         images={state.images}
