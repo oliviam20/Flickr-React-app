@@ -41,6 +41,8 @@ The layout consists of:
 
 - Toggle tags feature enabled on smaller screens.
 
+- Loader and Error messages
+
 ## Known Issues
 
 The api is blocked by CORS. Need to download a [chrome extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) to get around this.
