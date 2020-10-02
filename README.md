@@ -17,7 +17,7 @@ Followed this [guide](https://github.com/mars/create-react-app-buildpack) to dep
 
 ## Outcomes
 
-1. The app can locally run and deployed.
+1. Designed and implemented a responive web app.
 
 2. Used React and Context for state management.
 
@@ -25,7 +25,21 @@ Followed this [guide](https://github.com/mars/create-react-app-buildpack) to dep
 
 4. Can fetch images from the flickr API and used the `tags` query parameter to search the query, and display the results.
 
-5. Designed and implemented a responive web app.
+5. The app can locally run and deployed.
+
+## UI Design
+
+I did a simple, clean, and responsive design.
+
+The layout consists of:
+
+- Logo
+
+- Search bar
+
+- Gallery in Masonry tiles, from 4 - 1 columns depending on screen size.
+
+- Toggle tags feature enabled on smaller screens.
 
 ## Known Issues
 
