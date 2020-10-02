@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import FormattedDate from '../FormattedDate/FormattedDate';
@@ -7,7 +7,7 @@ import ImageLink from '../ImageLink/ImageLink';
 import Tag from '../Tag/Tag';
 import './Card.scss';
 
-const Card = ({
+const Card = memo(({
   author,
   date,
   thumbnail,
@@ -60,7 +60,7 @@ const Card = ({
       </figcaption>
     </figure>
   )
-}
+});
 
 Card.defaultProps = {
   author: '',
