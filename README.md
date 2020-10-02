@@ -26,3 +26,13 @@ Followed this [guide](https://github.com/mars/create-react-app-buildpack) to dep
 4. Can fetch images from the flickr API and used the `tags` query parameter to search the query, and display the results.
 
 5. Designed and implemented a responive web app.
+
+## Known Issues
+
+The api is blocked by CORS. Need to download a [chrome extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) to get around this.
+
+## Other possible features
+
+1. Photo editor + download
+
+2. Social sharing options
