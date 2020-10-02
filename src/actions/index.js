@@ -5,6 +5,7 @@ const API_URL = 'https://api.flickr.com/services/feeds/photos_public.gne?format=
 const CLEAR_IMAGES = 'CLEAR_IMAGES';
 const LOAD_IMAGES = 'LOAD_IMAGES';
 const LOAD_IMAGES_SUCESS = 'LOAD_IMAGES_SUCESS';
+const LOAD_IMAGES_FAIL = 'LOAD_IMAGES_FAIL';
 
 export const clearImages = async () => {
   return {
@@ -24,5 +25,7 @@ export const fetchImages = (tag) => {
       type: LOAD_IMAGES_SUCESS,
       result: res.data
     }))
-    .catch(err => console.log(err))
+    .catch(err => ({
+      type: LOAD_IMAGES_FAIL
+    }))
 };
