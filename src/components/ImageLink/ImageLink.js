@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import './ImageLink.scss';
 
-const ImageLink = ({
+const ImageLink = memo(({
   link,
   thumbnail,
   title
@@ -18,7 +18,7 @@ const ImageLink = ({
       <span className="overlay-text">Open</span>
     </div>
   </a>
-);
+));
 
 ImageLink.defaultProps = {
   link: '',

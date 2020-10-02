@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useContext } from 'react';
+import React, { memo, useEffect, useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { store } from '../../store/store';
 import { clearImages } from '../../actions/index';
@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 import InputText from '../InputText/InputText';
 import './Search.scss';
 
-const Search = ({
+const Search = memo(({
   onHandleTagChange,
   onHandleSearch,
   query
@@ -52,7 +52,7 @@ const Search = ({
       </Button>
     </div>
   )
-};
+});
 
 Search.defaultProps = {
   query: ''

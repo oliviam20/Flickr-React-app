@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import './InputText.scss';
 
-const InputText = ({
+const InputText = memo(({
   query,
   onHandleChange,
   onHandleKeyPress
@@ -16,7 +16,7 @@ const InputText = ({
     onChange={onHandleChange}
     onKeyDown={onHandleKeyPress}
   />
-);
+));
 
 InputText.defaultProps = {
   query: ''

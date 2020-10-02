@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import './Button.scss';
 
-const Button = ({
+const Button = memo(({
   children,
   className,
   onClick,
@@ -18,7 +18,7 @@ const Button = ({
   >
     {children || text}
   </button>
-);
+));
 
 Button.defaultProps = {
   className: '',

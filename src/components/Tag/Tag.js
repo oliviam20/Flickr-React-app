@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import './Tag.scss';
 
-const Tag = ({
+const Tag = memo(({
   tag,
   onHandleSearch
 }) => {
@@ -20,7 +20,7 @@ const Tag = ({
       </Button>
     </>
   );
-};
+});
 
 Tag.defaultProps = {
   tag: ''
