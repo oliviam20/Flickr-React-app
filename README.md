@@ -5,7 +5,7 @@ This uses the Flickr public api
 http://api.flickr.com/services/feeds/photos_public.gne
 ```
 
-[Live Demo 1 - Heroku](https://om-flickr-react-app.herokuapp.com/)
+[Live Demo 1 - Heroku](https://her-om-flkr.herokuapp.com/)
 
 [Live Demo 2 - Netlify](https://flickr-react-app.netlify.app/)
 
